@@ -9,7 +9,7 @@ class MyExercise extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Exercício 1", style: TextStyle(color: Colors.white)),
+        title: Text("Exercício 1", ),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
