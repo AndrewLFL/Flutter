@@ -55,43 +55,46 @@ class _MyRandomState extends State<MyRandom> {
         ),
         backgroundColor: const Color.fromARGB(250, 220, 10, 45),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 80,
-            ),
-            Image.asset('images/pokedex.png'),
-            SizedBox(
-              height: 50,
-            ),
-            Text(
-              aux,
-              style: TextStyle(fontFamily: 'Pixel'),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              child: Image.asset(
-                img,
+      body:SingleChildScrollView(
+        child:   Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 80,
               ),
-              height: 150,
-            ),
-            SizedBox(height: 100),
-            SizedBox(
-                width: 200,
-                child: FloatingActionButton(
-                  onPressed: () => {gerarPoke(), setState(() {})},
-                  child: Text(
-                    "Gerar Inicial",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  backgroundColor: Colors.black,
-                ))
-          ],
+              Image.asset('images/pokedex.png'),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                aux,
+                style: TextStyle(fontFamily: 'Pixel'),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                child: Image.asset(
+                  img,
+                ),
+                height: 150,
+              ),
+              SizedBox(height: 100),
+              SizedBox(
+                  width: 200,
+                  child: FloatingActionButton(
+                    onPressed: () => {gerarPoke(), setState(() {})},
+                    child: Text(
+                      "Gerar Inicial",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.black,
+                  )
+              )
+            ],
+          ),
         ),
-      ),
+      )
     );
   }
 }
