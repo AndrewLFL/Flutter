@@ -18,11 +18,22 @@ class _MyFormsState extends State<MyForms> {
   bool literatura = false;
   bool artes = false;
   bool noti = false;
+  List<String> interesse = [];
   List<Aluno> lista = [];
 
-  void create()
+  void mostrarLista()
   {
-    
+    lista.forEach((element) {
+      print("Nome: ${element.nome}");
+      print("Email: ${element.email}");
+      print("Curso: ${element.curso}");
+      print("Interesse: ${element.interesse}");
+      print("Receber notificação: ${element.noti}");
+      print("");
+
+    });
+    print("=====================================");
+    print("");
   }
 
   void cleanForm() {
@@ -172,7 +183,30 @@ class _MyFormsState extends State<MyForms> {
                       SizedBox(
                           width: 120,
                           child: FloatingActionButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              if(escrita)
+                              {
+                                interesse.add("Escrita Científica");
+                              };
+                              if(literatura)
+                              {
+                                interesse.add("Literatura Africana");
+                              };
+                              if(artes)
+                              {
+                                interesse.add("Artes");
+                              };
+                              lista.add(Aluno(
+                                  controladorNome.text,
+                                  controladorEmail.text,
+                                  curso,
+                                  interesse,
+                                  noti));
+                              cleanForm();
+                              interesse = [];
+                              mostrarLista();
+                              setState(() {});
+                            },
                             child: Text(
                               "Enviar",
                               style:

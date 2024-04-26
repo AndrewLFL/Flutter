@@ -25,11 +25,5 @@ class Aluno {
 
   set noti(value) => this._noti = value;
 
-  Aluno(nome, email, curso, interesse, noti) {
-    _nome = nome;
-    _email = email;
-    _curso = curso;
-    _interesse = interesse;
-    _noti = noti;
-  }
+  Aluno(this._nome, this._email, this._curso, this._interesse, this._noti);
 }
