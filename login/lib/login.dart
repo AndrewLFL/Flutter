@@ -41,7 +41,7 @@ class _MyLoginState extends State<MyLogin> {
           backgroundColor: Colors.white,
           actions: <Widget>[
             TextButton(
-              child: const Text('Approve'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -67,7 +67,7 @@ class _MyLoginState extends State<MyLogin> {
           backgroundColor: Colors.white,
           actions: <Widget>[
             TextButton(
-              child: const Text('Approve'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -124,6 +124,7 @@ class _MyLoginState extends State<MyLogin> {
               ),
               TextFormField(
                 controller: passwordController,
+                obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5)),
@@ -156,7 +157,8 @@ class _MyLoginState extends State<MyLogin> {
                             });
                         if (aux) {
                           approved();
-                          print("Bem vindo " + usernameController.text);
+                          print(
+                              "Bem vindo de volta " + usernameController.text);
                         } else {
                           denied();
                           print("Nome de usuário ou senha inválidos");
